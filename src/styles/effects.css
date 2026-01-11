@@ -1,0 +1,55 @@
+.app-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.app-bg__mask {
+  position: absolute;
+  inset: 0;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 0%,
+    black 80%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 0%,
+    black 80%,
+    transparent
+  );
+}
+
+.app-bg__unicorn {
+  position: absolute;
+  inset: 0;
+}
+
+.app-bg__blob {
+  position: absolute;
+  width: clamp(18rem, 55vw, 38rem);
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+
+  filter: blur(clamp(4rem, 7vw, 7.5rem));
+  mix-blend-mode: screen;
+  opacity: 0.9;
+}
+
+.app-bg__blob--gold {
+  top: -10%;
+  left: -10%;
+  background: color-mix(in oklab, var(--gold-300) 12%, transparent);
+}
+
+.app-bg__blob--plum {
+  bottom: -10%;
+  right: -10%;
+  background: rgba(88, 28, 135, 0.18);
+}
