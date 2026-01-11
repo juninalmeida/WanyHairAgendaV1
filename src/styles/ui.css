@@ -46,6 +46,18 @@
   box-shadow: var(--shadow-card);
   border-radius: var(--r-lg);
 }
+.card-title {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-2);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.card-desc {
+  margin-top: var(--sp-1);
+  color: var(--c-muted);
+  font-size: var(--fs-1);
+}
 
 @supports (
   (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))
