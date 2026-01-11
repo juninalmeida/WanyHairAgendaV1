@@ -246,24 +246,93 @@
         </section>
 
         <aside class="schedule glass-card card-pad">
-          <h2 class="card-title">Agenda do Dia</h2>
-          <p class="card-desc">Agendamentos por período.</p>
+          <div class="schedule-head">
+            <div class="schedule-title">
+              <h2 class="card-title">Agenda do Dia</h2>
+              <p class="card-desc">Agendamentos por período.</p>
+            </div>
+          </div>
 
-          <ul
-            id="period-morning"
-            class="period"
-            aria-label="Agendamentos da manhã"
-          ></ul>
-          <ul
-            id="period-afternoon"
-            class="period"
-            aria-label="Agendamentos da tarde"
-          ></ul>
-          <ul
-            id="period-night"
-            class="period"
-            aria-label="Agendamentos da noite"
-          ></ul>
+          <section class="schedule-period">
+            <header class="schedule-period__head">
+              <div class="schedule-period__label">
+                <i data-lucide="sun" aria-hidden="true"></i>
+                <h3>Manhã</h3>
+              </div>
+
+              <span class="schedule-pill">Clientes</span>
+            </header>
+
+            <ul
+              id="period-morning"
+              class="period"
+              aria-label="Agendamentos da manhã"
+            >
+              <li>
+                <strong>09:00</strong>
+                <span>Ana Clara</span>
+                <img
+                  class="cancel-icon"
+                  src="./src/assets/icons/cancel.svg"
+                  alt="Cancelar"
+                />
+              </li>
+
+              <li>
+                <strong>10:30</strong>
+                <span>Beatriz Souza</span>
+                <img
+                  class="cancel-icon"
+                  src="./src/assets/icons/cancel.svg"
+                  alt="Cancelar"
+                />
+              </li>
+            </ul>
+          </section>
+
+          <section class="schedule-period">
+            <header class="schedule-period__head">
+              <div class="schedule-period__label">
+                <i data-lucide="cloud-sun" aria-hidden="true"></i>
+                <h3>Tarde</h3>
+              </div>
+
+              <span class="schedule-pill">1 cliente</span>
+            </header>
+
+            <ul
+              id="period-afternoon"
+              class="period"
+              aria-label="Agendamentos da tarde"
+            >
+              <li>
+                <strong>14:00</strong>
+                <span>Juliana Paes</span>
+                <img
+                  class="cancel-icon"
+                  src="./src/assets/icons/cancel.svg"
+                  alt="Cancelar"
+                />
+              </li>
+            </ul>
+          </section>
+
+          <section class="schedule-period">
+            <header class="schedule-period__head">
+              <div class="schedule-period__label">
+                <i data-lucide="moon" aria-hidden="true"></i>
+                <h3>Noite</h3>
+              </div>
+
+              <span class="schedule-pill">Disponível</span>
+            </header>
+
+            <ul
+              id="period-night"
+              class="period"
+              aria-label="Agendamentos da noite"
+            ></ul>
+          </section>
         </aside>
       </main>
     </div>
