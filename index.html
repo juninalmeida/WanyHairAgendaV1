@@ -1,67 +1,274 @@
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WanyHair Exclusive</title>
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050505" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
-    rel="stylesheet"
-  />
+    <title>WanyHair Agenda</title>
 
-  <link rel="stylesheet" href="./src/styles/index.css" />
-</head>
-<body>
-  <div class="app-bg" aria-hidden="true">
-    <div class="app-bg__mask">
-      <div class="app-bg__unicorn" data-us-project="HrR4RrsSf8RcKjStWKwR"></div>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./src/styles/index.css" />
+  </head>
+
+  <body>
+    <div class="app-bg" aria-hidden="true">
+      <div class="app-bg__mask">
+        <div
+          class="app-bg__unicorn"
+          data-us-project="HrR4RrsSf8RcKjStWKwR"
+        ></div>
+      </div>
     </div>
 
-    <div class="app-bg__blob app-bg__blob--gold animate-pulse-slow"></div>
-    <div
-      class="app-bg__blob app-bg__blob--plum animate-pulse-slow"
-      style="animation-delay: 2s"
-    ></div>
-  </div>
+    <div class="container">
+      <header class="header animate-fade-up">
+        <div class="brand">
+          <div class="brand-row">
+            <span class="brand-icon" aria-hidden="true">
+              <i data-lucide="scissors"></i>
+            </span>
 
-  <div class="container">
-    <header class="header">
-      <div class="brand">
-        <div class="brand-row">
-          <span class="brand-icon" aria-hidden="true">
-            <i data-lucide="scissors"></i>
-          </span>
+            <h1 class="brand-title">WanyHair Agenda</h1>
+          </div>
 
-          <h1 class="brand-title">WanyHair</h1>
+          <p class="brand-subtitle">Exclusive Studio &amp; Spa</p>
         </div>
 
-        <p class="brand-subtitle">Exclusive Studio &amp; Spa</p>
-      </div>
+        <div class="status-badge" aria-label="Status da agenda">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="status-text">Agenda Aberta</span>
+        </div>
+      </header>
 
-      <div class="status-badge" aria-label="Status da agenda">
-        <span class="status-dot" aria-hidden="true"></span>
-        <span class="status-text">Agenda Aberta</span>
-      </div>
-    </header>
+      <main class="main">
+        <section class="glass-card card-pad">
+          <form class="form">
+            <div class="form-head">
+              <h2 class="card-title">Novo Agendamento</h2>
+              <i
+                data-lucide="calendar-plus"
+                class="icon"
+                aria-hidden="true"
+              ></i>
+            </div>
 
-    <main class="main">
-      <section class="glass-card card-pad">
-        <h2 class="card-title">
-          Novo Agendamento
-        </h2>
-        <p class="card-desc">Placeholder (Fase 4)</p>
-        </p>
-      </section>
+            <div class="field">
+              <label for="date" class="field-label">Data desejada</label>
 
-      <aside class="glass-card card-pad">
-        <h2 class="card-title">Agenda do Dia</h2>
-        <p class="card-desc">Placeholder (Fase 5)</p>
-</aside>
-      </aside>
-    </main>
-  </div>
+              <div class="field-control">
+                <input
+                  id="date"
+                  name="date"
+                  type="date"
+                  required
+                  class="input input-elegant"
+                />
+                <i
+                  data-lucide="chevron-down"
+                  class="field-icon"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </div>
 
-  <script type="module" src="./src/js/background.js"></script>
-  <script type="module" src="./src/js/icons.js"></script>
-</body>
+            <div class="field">
+              <span class="field-label">Horários disponíveis</span>
+
+              <ul id="hours" class="hours" aria-label="Horários disponíveis">
+                <li class="hour-period">
+                  <i
+                    data-lucide="sun"
+                    class="period-icon"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Manhã</span>
+                  <span class="period-line" aria-hidden="true"></span>
+                </li>
+
+                <li
+                  class="hour hour-item hour-available"
+                  value="09:00"
+                  data-period="morning"
+                >
+                  09:00
+                </li>
+                <li
+                  class="hour hour-item hour-available"
+                  value="10:00"
+                  data-period="morning"
+                >
+                  10:00
+                </li>
+                <li
+                  class="hour hour-item hour-unavailable"
+                  value="11:00"
+                  data-period="morning"
+                >
+                  11:00
+                </li>
+                <li
+                  class="hour hour-item hour-selected"
+                  value="11:30"
+                  data-period="morning"
+                >
+                  11:30
+                </li>
+
+                <li class="hour-period">
+                  <i
+                    data-lucide="sunset"
+                    class="period-icon"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Tarde</span>
+                  <span class="period-line" aria-hidden="true"></span>
+                </li>
+
+                <li
+                  class="hour hour-item hour-available"
+                  value="13:00"
+                  data-period="afternoon"
+                >
+                  13:00
+                </li>
+                <li
+                  class="hour hour-item hour-available"
+                  value="14:30"
+                  data-period="afternoon"
+                >
+                  14:30
+                </li>
+                <li
+                  class="hour hour-item hour-available"
+                  value="15:00"
+                  data-period="afternoon"
+                >
+                  15:00
+                </li>
+                <li
+                  class="hour hour-item hour-unavailable"
+                  value="16:00"
+                  data-period="afternoon"
+                >
+                  16:00
+                </li>
+                <li
+                  class="hour hour-item hour-available"
+                  value="17:00"
+                  data-period="afternoon"
+                >
+                  17:00
+                </li>
+
+                <li class="hour-period">
+                  <i
+                    data-lucide="moon"
+                    class="period-icon"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Noite</span>
+                  <span class="period-line" aria-hidden="true"></span>
+                </li>
+
+                <li
+                  class="hour hour-item hour-available"
+                  value="18:00"
+                  data-period="night"
+                >
+                  18:00
+                </li>
+                <li
+                  class="hour hour-item hour-available"
+                  value="18:30"
+                  data-period="night"
+                >
+                  18:30
+                </li>
+                <li
+                  class="hour hour-item hour-available"
+                  value="19:00"
+                  data-period="night"
+                >
+                  19:00
+                </li>
+                <li
+                  class="hour hour-item hour-available"
+                  value="19:30"
+                  data-period="night"
+                >
+                  19:30
+                </li>
+                <li
+                  class="hour hour-item hour-unavailable"
+                  value="20:00"
+                  data-period="night"
+                >
+                  20:00
+                </li>
+              </ul>
+            </div>
+
+            <div class="form-footer">
+              <div class="field">
+                <label for="client" class="field-label">Nome da cliente</label>
+
+                <div class="field-control">
+                  <i
+                    data-lucide="user"
+                    class="field-icon field-icon--left"
+                    aria-hidden="true"
+                  ></i>
+
+                  <input
+                    id="client"
+                    name="client"
+                    type="text"
+                    required
+                    placeholder="Nome completo"
+                    autocomplete="name"
+                    class="input input-elegant input--with-left-icon"
+                  />
+                </div>
+              </div>
+
+              <button type="submit" class="button btn-gold">
+                Confirmar agendamento
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <aside class="schedule glass-card card-pad">
+          <h2 class="card-title">Agenda do Dia</h2>
+          <p class="card-desc">Agendamentos por período.</p>
+
+          <ul
+            id="period-morning"
+            class="period"
+            aria-label="Agendamentos da manhã"
+          ></ul>
+          <ul
+            id="period-afternoon"
+            class="period"
+            aria-label="Agendamentos da tarde"
+          ></ul>
+          <ul
+            id="period-night"
+            class="period"
+            aria-label="Agendamentos da noite"
+          ></ul>
+        </aside>
+      </main>
+    </div>
+
+    <script type="module" src="./src/js/background.js"></script>
+    <script type="module" src="./src/js/icons.js"></script>
+  </body>
+</html>

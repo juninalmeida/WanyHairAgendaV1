@@ -21,9 +21,7 @@ async function initIcons() {
     }
 
     window.lucide?.createIcons?.();
-  } catch (err) {
-    console.warn("[icons] Lucide failed to init:", err);
-  }
+  } catch (err) {}
 }
 
 document.addEventListener("DOMContentLoaded", initIcons);

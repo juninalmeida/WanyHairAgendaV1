@@ -1,0 +1,134 @@
+.form {
+  display: grid;
+  gap: var(--sp-4);
+}
+
+.form-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-2);
+}
+
+.form-head .icon {
+  width: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  height: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  color: rgba(214, 179, 106, 0.8);
+}
+
+.field {
+  display: grid;
+  gap: var(--sp-1);
+}
+
+.field-label {
+  font-size: var(--fs-0);
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-300);
+}
+
+.field-control {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  border-radius: var(--r-md);
+  padding-block: clamp(0.85rem, 0.78rem + 0.35vw, 1rem);
+  padding-inline: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);
+  font-size: var(--fs-1);
+}
+
+.field-icon {
+  position: absolute;
+  top: 50%;
+  right: clamp(0.9rem, 0.75rem + 0.5vw, 1.25rem);
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  color: rgba(237, 237, 237, 0.35);
+  pointer-events: none;
+}
+
+.field-icon--left {
+  left: clamp(0.9rem, 0.75rem + 0.5vw, 1.25rem);
+  right: auto;
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.input--with-left-icon {
+  padding-left: clamp(2.75rem, 2.4rem + 1vw, 3.25rem);
+}
+
+.hours {
+  display: grid;
+  gap: var(--sp-2);
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(4.1rem, 12vw, 5.3rem), 1fr)
+  );
+}
+
+.hour-period {
+  grid-column: 1 / -1;
+
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+
+  margin-top: var(--sp-1);
+  color: rgba(237, 237, 237, 0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: var(--fs-0);
+}
+
+.hour-period .period-icon {
+  width: 1rem;
+  height: 1rem;
+  color: rgba(240, 222, 170, 0.9);
+}
+
+.hour-period .period-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.12), transparent);
+}
+
+.hour {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--r-sm);
+  padding-block: clamp(0.5rem, 0.45rem + 0.3vw, 0.6rem);
+  padding-inline: clamp(0.6rem, 0.55rem + 0.3vw, 0.75rem);
+
+  font-size: var(--fs-0);
+  font-weight: 600;
+  user-select: none;
+}
+
+.form-footer {
+  display: grid;
+  gap: var(--sp-3);
+  padding-top: var(--sp-3);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.button {
+  width: 100%;
+  border: 0;
+  border-radius: var(--r-md);
+  padding-block: clamp(0.9rem, 0.82rem + 0.4vw, 1.05rem);
+  padding-inline: clamp(1rem, 0.9rem + 0.6vw, 1.35rem);
+
+  font-size: var(--fs-1);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}

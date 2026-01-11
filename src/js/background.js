@@ -27,11 +27,7 @@ async function initUnicornStudio() {
       window.UnicornStudio.init();
       window.UnicornStudio.isInitialized = true;
     }
-  } catch (err) {
-    console.warn("[background] UnicornStudio failed to init:", err);
-  }
+  } catch (err) {}
 }
 
 document.addEventListener("DOMContentLoaded", initUnicornStudio);
-
-
