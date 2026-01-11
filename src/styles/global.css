@@ -1,0 +1,145 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+:root {
+  --ff-sans: "Manrope", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+  --ff-serif: "Playfair Display", ui-serif, Georgia, "Times New Roman", serif;
+
+  --gold-100: #f9f1d8;
+  --gold-200: #f0deaa;
+  --gold-300: #d6b36a;
+  --gold-400: #b08d55;
+  --gold-500: #8c6b3d;
+  --gold-glow: rgba(214, 179, 106, 0.5);
+
+  --obsidian-900: #050505;
+  --obsidian-800: #0a0a0a;
+  --obsidian-surface: #121212;
+
+  --c-bg: #050505;
+  --c-text: #ededed;
+
+  --c-muted: rgba(237, 237, 237, 0.72);
+  --c-border: rgba(255, 255, 255, 0.08);
+  --c-border-strong: rgba(255, 255, 255, 0.1);
+
+  --c-accent: var(--gold-300);
+  --c-surface: var(--obsidian-surface);
+  --c-surface-2: rgba(255, 255, 255, 0.03);
+
+  --shadow-card: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+  --fs-0: clamp(0.875rem, 0.84rem + 0.18vw, 0.95rem);
+  --fs-1: clamp(0.95rem, 0.9rem + 0.28vw, 1.05rem);
+  --fs-2: clamp(1.15rem, 1rem + 0.75vw, 1.45rem);
+  --fs-3: clamp(1.45rem, 1.15rem + 1.35vw, 2.05rem);
+
+  --sp-1: clamp(0.5rem, 0.45rem + 0.25vw, 0.75rem);
+  --sp-2: clamp(0.75rem, 0.65rem + 0.45vw, 1rem);
+  --sp-3: clamp(1rem, 0.85rem + 0.8vw, 1.5rem);
+  --sp-4: clamp(1.25rem, 1rem + 1.2vw, 2rem);
+
+  --container: 72rem;
+
+  --r-sm: 0.75rem;
+  --r-md: 1rem;
+  --r-lg: 1.25rem;
+}
+
+body {
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--ff-sans);
+  font-size: var(--fs-1);
+}
+
+.container {
+  width: min(calc(100% - (2 * var(--sp-2))), var(--container));
+  margin-inline: auto;
+  padding-block: var(--sp-3);
+}
+
+::selection {
+  background: var(--gold-300);
+  color: var(--obsidian-900);
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none;
+    transition: none;
+  }
+}
