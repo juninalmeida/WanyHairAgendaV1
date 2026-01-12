@@ -32,7 +32,7 @@
         <div class="brand">
           <div class="brand-row">
             <span class="brand-icon" aria-hidden="true">
-              <i data-lucide="scissors"></i>
+              <svg data-lucide="scissors"></svg>
             </span>
 
             <h1 class="brand-title">WanyHair Agenda</h1>
@@ -41,9 +41,17 @@
           <p class="brand-subtitle">Exclusive Studio &amp; Spa</p>
         </div>
 
-        <div class="status-badge" aria-label="Status da agenda">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span class="status-text">Agenda Aberta</span>
+        <div
+          class="status-badge"
+          data-status="closed"
+          aria-label="Status da agenda"
+        >
+          <span class="status-indicator" aria-hidden="true">
+            <span class="status-ping"></span>
+            <span class="status-dot"></span>
+          </span>
+
+          <span class="status-text">Agenda Fechada</span>
         </div>
       </header>
 
@@ -297,7 +305,7 @@
                 <h3>Tarde</h3>
               </div>
 
-              <span class="schedule-pill">1 cliente</span>
+              <span class="schedule-pill">Clientes</span>
             </header>
 
             <ul

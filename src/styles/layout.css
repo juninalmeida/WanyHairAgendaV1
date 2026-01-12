@@ -18,18 +18,52 @@
 }
 
 .brand-icon {
+  --glow-inset: clamp(0.18rem, 0.14rem + 0.25vw, 0.25rem);
+
+  position: relative;
   display: inline-grid;
   place-items: center;
   border-radius: 999px;
 
-  padding: clamp(0.55rem, 0.5rem + 0.3vw, 0.7rem);
-  background: rgba(255, 255, 255, 0.04);
+  padding: clamp(0.6rem, 0.54rem + 0.35vw, 0.78rem);
+
+  background: radial-gradient(
+      circle at 30% 30%,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0) 45%
+    ),
+    var(--obsidian-900);
+
   border: 1px solid rgba(214, 179, 106, 0.3);
+
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    inset 0 -10px 18px rgba(0, 0, 0, 0.55);
+
+  isolation: isolate;
 }
 
-.brand-icon i {
-  width: 1.15rem;
-  height: 1.15rem;
+.brand-icon::before {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--glow-inset));
+  border-radius: inherit;
+
+  background: linear-gradient(90deg, var(--gold-300), var(--gold-400));
+  filter: blur(clamp(0.9rem, 0.65rem + 1vw, 1.35rem));
+
+  opacity: 0.4;
+  z-index: -1;
+  transition: opacity 500ms ease;
+}
+
+.brand-icon:hover::before {
+  opacity: 0.75;
+}
+
+.brand-icon :is(svg, i) {
+  width: clamp(1.15rem, 1.05rem + 0.3vw, 1.25rem);
+  height: clamp(1.15rem, 1.05rem + 0.3vw, 1.25rem);
   color: var(--gold-300);
 }
 
@@ -70,11 +104,52 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.status-dot {
-  width: 0.5rem;
-  height: 0.5rem;
+.status-badge {
+  --status-dot: #ef4444;
+  --status-ping: #f87171;
+}
+
+.status-badge[data-status="open"] {
+  --status-dot: #22c55e;
+  --status-ping: #4ade80;
+}
+
+.status-indicator {
+  position: relative;
+  width: clamp(0.45rem, 0.4rem + 0.2vw, 0.55rem);
+  aspect-ratio: 1 / 1;
+  display: inline-block;
+}
+
+.status-ping {
+  position: absolute;
+  inset: 0;
   border-radius: 999px;
-  background: #22c55e;
+  background: var(--status-ping);
+
+  opacity: 0.75;
+  animation: statusPing 1.2s ease-out infinite;
+}
+
+.status-dot {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--status-dot);
+}
+
+@keyframes statusPing {
+  0% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  75%,
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
 }
 
 .status-text {
@@ -102,10 +177,6 @@
   .brand {
     justify-items: start;
     text-align: left;
-  }
-
-  .status-badge {
-    justify-self: end;
   }
 
   .main {
