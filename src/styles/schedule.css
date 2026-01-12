@@ -5,16 +5,107 @@
 
 .schedule-head {
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: space-between;
   gap: var(--sp-2);
+
   padding-bottom: var(--sp-2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.schedule-avatars {
+  display: flex;
+  align-items: center;
+
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.avatar {
+  --size: clamp(2rem, 1.75rem + 0.6vw, 2.25rem);
+  --overlap: clamp(0.5rem, 0.42rem + 0.3vw, 0.65rem);
+
+  width: var(--size);
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+
+  border: 2px solid var(--obsidian-900);
+
+  position: relative;
+}
+
+.avatar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  background: radial-gradient(
+      circle at 30% 25%,
+      rgba(255, 255, 255, 0.1),
+      transparent 40%
+    ),
+    linear-gradient(transparent, rgba(0, 0, 0, 0.18));
+  opacity: 0.35;
+}
+
+.avatar + .avatar {
+  margin-left: calc(-1 * var(--overlap));
+}
+
+.avatar--1 {
+  z-index: 1;
+
+  background: radial-gradient(
+      circle at 30% 30%,
+      rgba(255, 255, 255, 0.2),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 70% 60%,
+      rgba(214, 179, 106, 0.18),
+      transparent 55%
+    ),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.1)),
+    rgba(237, 237, 237, 0.1);
+}
+
+.avatar--2 {
+  z-index: 2;
+
+  background: radial-gradient(
+      circle at 35% 35%,
+      rgba(255, 255, 255, 0.16),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 65% 65%,
+      rgba(255, 255, 255, 0.1),
+      transparent 55%
+    ),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.12)),
+    rgba(237, 237, 237, 0.08);
+}
+
+.avatar--more {
+  background: var(--gold-300);
+  display: inline-grid;
+  place-items: center;
+  z-index: 3;
+}
+
+.avatar-more-text {
+  font-size: var(--fs-0);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--obsidian-900);
 }
 
 .schedule-title {
   display: grid;
   gap: 0.25rem;
+  min-width: 0;
 }
 
 .schedule-title .card-desc {
