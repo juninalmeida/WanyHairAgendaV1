@@ -221,3 +221,47 @@
   font-size: var(--fs-0);
   color: rgba(237, 237, 237, 0.2);
 }
+
+.schedule-promo {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  padding: var(--sp-3);
+  border-radius: var(--r-lg);
+
+  border: 1px solid rgba(214, 179, 106, 0.2);
+  background: linear-gradient(135deg, rgba(214, 179, 106, 0.1), transparent);
+}
+
+.schedule-promo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: clamp(4.5rem, 3.6rem + 3vw, 6rem);
+  aspect-ratio: 1 / 1;
+
+  border-radius: 999px;
+  background: rgba(214, 179, 106, 0.2);
+  filter: blur(clamp(1.8rem, 1.4rem + 1.5vw, 3.1rem));
+
+  transform: translate(35%, -35%);
+  pointer-events: none;
+}
+
+.schedule-promo__quote {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: var(--fs-0);
+  color: var(--gold-200, rgba(240, 222, 170, 0.9));
+  margin-bottom: 0.25rem;
+}
+
+.schedule-promo__label {
+  font-size: clamp(0.55rem, 0.52rem + 0.15vw, 0.625rem);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(237, 237, 237, 0.4);
+}
