@@ -1,0 +1,25 @@
+{
+  "name": "wanyhairagendav1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server":"json-server --watch server.json --port 3333",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juninalmeida/WanyHairAgendaV1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/juninalmeida/WanyHairAgendaV1/issues"
+  },
+  "homepage": "https://github.com/juninalmeida/WanyHairAgendaV1#readme",
+  "dependencies": {
+    "json-server": "^1.0.0-alpha.21"
+  }
+}
