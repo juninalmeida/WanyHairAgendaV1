@@ -88,9 +88,7 @@
 }
 
 .hour-period .period-icon {
-  width: 1rem;
-  height: 1rem;
-  color: rgba(240, 222, 170, 0.9);
+  color: var(--c-period-icon);
 }
 
 .hour-period .period-line {

@@ -84,6 +84,8 @@ h6 {
   --c-surface: var(--obsidian-surface);
   --c-surface-2: rgba(255, 255, 255, 0.03);
 
+  --c-period-icon: rgba(240, 222, 170, 0.9);
+
   --shadow-card: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 
   --fs-0: clamp(0.875rem, 0.84rem + 0.18vw, 0.95rem);

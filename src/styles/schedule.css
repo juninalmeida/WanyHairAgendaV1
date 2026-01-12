@@ -139,7 +139,7 @@
 .schedule-period__label i {
   width: 1rem;
   height: 1rem;
-  color: var(--gold-300);
+  color: var(--c-period-icon);
 }
 
 .schedule-period__label h3 {
@@ -205,4 +205,19 @@
 
 .cancel-icon:hover {
   opacity: 1;
+}
+
+.period:empty::before {
+  content: "Horário Livre";
+  display: block;
+
+  padding: clamp(1rem, 0.9rem + 0.6vw, 1.25rem);
+  border-radius: var(--r-md);
+
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.1);
+
+  text-align: center;
+  font-size: var(--fs-0);
+  color: rgba(237, 237, 237, 0.2);
 }
