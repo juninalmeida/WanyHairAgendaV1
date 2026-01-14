@@ -1,7 +1,9 @@
 "use strict";
 
-//CSS IMPORTS.
+//Config DayJS
+import "../libs/dayjs.js";
 
+//CSS IMPORTS.
 import "../styles/global.css";
 import "../styles/ui.css";
 import "../styles/effects.css";

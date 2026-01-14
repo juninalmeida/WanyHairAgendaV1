@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/juninalmeida/WanyHairAgendaV1#readme",
   "dependencies": {
+    "dayjs": "^1.11.10",
     "json-server": "^1.0.0-alpha.21"
   },
   "devDependencies": {
