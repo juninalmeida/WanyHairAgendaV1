@@ -25,7 +25,7 @@
     {
       "id": "a455",
       "startAt": "2026-01-15T14:30:00",
-      "serviceId": 1,
+      "serviceId": "1",
       "durationMin": 60,
       "clientName": "Ana"
     }
