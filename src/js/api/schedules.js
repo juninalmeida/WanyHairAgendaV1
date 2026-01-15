@@ -16,3 +16,7 @@ export function deleteSchedule(id) {
     method: "DELETE",
   });
 }
+
+export function listSchedulesByDate(date) {
+  return requestJson(`/schedules?startAt_like=${encodeURIComponent(date)}`);
+}
