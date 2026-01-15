@@ -127,140 +127,40 @@
             </div>
 
             <div class="field">
-              <span class="field-label">Horários disponíveis</span>
+              <label for="time" class="field-label">Horário</label>
 
-              <ul id="hours" class="hours" aria-label="Horários disponíveis">
-                <li class="hour-period">
-                  <i
-                    data-lucide="sun"
-                    class="period-icon"
-                    aria-hidden="true"
-                  ></i>
-                  <span>Manhã</span>
-                  <span class="period-line" aria-hidden="true"></span>
-                </li>
+              <div class="field-control">
+                <input
+                  id="time"
+                  name="time"
+                  type="time"
+                  required
+                  class="input input-elegant"
+                  min="08:00"
+                  step="300"
+                />
+              </div>
+            </div>
 
-                <li
-                  class="hour hour-item hour-available"
-                  value="09:00"
-                  data-period="morning"
-                >
-                  09:00
-                </li>
-                <li
-                  class="hour hour-item hour-available"
-                  value="10:00"
-                  data-period="morning"
-                >
-                  10:00
-                </li>
-                <li
-                  class="hour hour-item hour-unavailable"
-                  value="11:00"
-                  data-period="morning"
-                >
-                  11:00
-                </li>
-                <li
-                  class="hour hour-item hour-selected"
-                  value="11:30"
-                  data-period="morning"
-                >
-                  11:30
-                </li>
+            <div class="field">
+              <label for="service" class="field-label">Serviço</label>
 
-                <li class="hour-period">
-                  <i
-                    data-lucide="sunset"
-                    class="period-icon"
-                    aria-hidden="true"
-                  ></i>
-                  <span>Tarde</span>
-                  <span class="period-line" aria-hidden="true"></span>
-                </li>
+              <div class="field-control">
+                <select
+                  id="service"
+                  name="service"
+                  required
+                  class="input input-elegant"
+                >
+                  <option value="">Selecione um serviço</option>
+                </select>
 
-                <li
-                  class="hour hour-item hour-available"
-                  value="13:00"
-                  data-period="afternoon"
-                >
-                  13:00
-                </li>
-                <li
-                  class="hour hour-item hour-available"
-                  value="14:30"
-                  data-period="afternoon"
-                >
-                  14:30
-                </li>
-                <li
-                  class="hour hour-item hour-available"
-                  value="15:00"
-                  data-period="afternoon"
-                >
-                  15:00
-                </li>
-                <li
-                  class="hour hour-item hour-unavailable"
-                  value="16:00"
-                  data-period="afternoon"
-                >
-                  16:00
-                </li>
-                <li
-                  class="hour hour-item hour-available"
-                  value="17:00"
-                  data-period="afternoon"
-                >
-                  17:00
-                </li>
-
-                <li class="hour-period">
-                  <i
-                    data-lucide="moon"
-                    class="period-icon"
-                    aria-hidden="true"
-                  ></i>
-                  <span>Noite</span>
-                  <span class="period-line" aria-hidden="true"></span>
-                </li>
-
-                <li
-                  class="hour hour-item hour-available"
-                  value="18:00"
-                  data-period="night"
-                >
-                  18:00
-                </li>
-                <li
-                  class="hour hour-item hour-available"
-                  value="18:30"
-                  data-period="night"
-                >
-                  18:30
-                </li>
-                <li
-                  class="hour hour-item hour-available"
-                  value="19:00"
-                  data-period="night"
-                >
-                  19:00
-                </li>
-                <li
-                  class="hour hour-item hour-available"
-                  value="19:30"
-                  data-period="night"
-                >
-                  19:30
-                </li>
-                <li
-                  class="hour hour-item hour-unavailable"
-                  value="20:00"
-                  data-period="night"
-                >
-                  20:00
-                </li>
-              </ul>
+                <i
+                  data-lucide="chevron-down"
+                  class="field-icon"
+                  aria-hidden="true"
+                ></i>
+              </div>
             </div>
 
             <div class="form-footer">

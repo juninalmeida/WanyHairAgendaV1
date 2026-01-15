@@ -130,3 +130,11 @@
   text-transform: uppercase;
   letter-spacing: 0.14em;
 }
+
+.field-control select.input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  padding-right: clamp(2.75rem, 2.4rem + 1vw, 3.25rem);
+}
