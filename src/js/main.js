@@ -16,3 +16,12 @@ import "../styles/loader.css";
 import "./loader.js";
 import "./background.js";
 import "./icons.js";
+
+//"Bootstrap"
+import { getState, subscribe } from "./state/store.js";
+import { render } from "./ui/render.js";
+import { initServices } from "./app/initServices.js";
+
+subscribe(render);
+render(getState());
+initServices();
