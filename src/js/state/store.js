@@ -1,8 +1,25 @@
 let state = {
   services: [],
+  schedulesOfDay: [],
+
+  bookingDraft: {
+    date: "",
+    time: "",
+    serviceId: "",
+    clientName: "",
+  },
+
+  draftStatus: {
+    isValid: false,
+    reason: null,
+  },
+
   ui: {
     loadingServices: false,
     errorServices: null,
+
+    loadingSchedules: false,
+    errorSchedules: null,
   },
 };
 
