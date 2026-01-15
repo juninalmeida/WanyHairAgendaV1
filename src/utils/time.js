@@ -52,3 +52,12 @@ export function hasConflict(
     .map(intervalFromSchedule)
     .some((existingInterval) => overlaps(existingInterval, candidateInterval));
 }
+
+function timeToMinutes(time) {
+  const [hh, mm] = time.split(":").map(Number);
+  return hh * 60 + mm;
+}
+
+export function isOnOrAfterOpenTime(time, openTime = "8:00") {
+  return timeToMinutes(time) >= timeToMinutes(openTime);
+}
