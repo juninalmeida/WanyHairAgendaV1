@@ -1,3 +1,33 @@
 {
-  "schedules": []
+  "services": [
+    {
+      "id": "1",
+      "name": "Selagem",
+      "durationMin": 120
+    },
+    {
+      "id": "2",
+      "name": "Escova",
+      "durationMin": 60
+    },
+    {
+      "id": "3",
+      "name": "Corte",
+      "durationMin": 45
+    },
+    {
+      "id": "4",
+      "name": "Hidratação",
+      "durationMin": 30
+    }
+  ],
+  "schedules": [
+    {
+      "id": "a455",
+      "startAt": "2026-01-15T14:30:00",
+      "serviceId": 1,
+      "durationMin": 60,
+      "clientName": "Ana"
+    }
+  ]
 }
