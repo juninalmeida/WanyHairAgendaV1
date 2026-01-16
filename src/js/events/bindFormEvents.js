@@ -25,7 +25,7 @@ export function bindFormEvents() {
   });
 
   dom.clientInput.addEventListener("input", () => {
-    const clientName = dom.clientInput.value;
+    const clientName = dom.clientInput.value.trim();
     updateBookingDraft({ clientName });
   });
 }
