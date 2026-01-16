@@ -1,6 +1,6 @@
 import { dom } from "../ui/dom.js";
-import { getState, setState } from "../state/store.js";
 import { initSchedulesForDate } from "../app/initSchedulesForDate.js";
+import { updateBookingDraft } from "../state/bookingDraft.js";
 
 export function bindFormEvents() {
   dom.form.addEventListener("submit", (event) => {
@@ -10,12 +10,22 @@ export function bindFormEvents() {
   dom.dateInput.addEventListener("change", () => {
     const date = dom.dateInput.value;
 
-    const state = getState();
-
-    setState({
-      bookingDraft: { ...state.bookingDraft, date },
-    });
-
+    updateBookingDraft({ date });
     initSchedulesForDate(date);
+  });
+
+  dom.timeInput.addEventListener("change", () => {
+    const time = dom.timeInput.value;
+    updateBookingDraft({ time });
+  });
+
+  dom.serviceSelect.addEventListener("change", () => {
+    const serviceId = dom.serviceSelect.value;
+    updateBookingDraft({ serviceId });
+  });
+
+  dom.clientInput.addEventListener("input", () => {
+    const clientName = dom.clientInput.value;
+    updateBookingDraft({ clientName });
   });
 }
