@@ -20,6 +20,9 @@ let state = {
 
     loadingSchedules: false,
     errorSchedules: null,
+
+    savingSchedule: false,
+    errorSaveSchedule: null,
   },
 };
 
@@ -33,6 +36,9 @@ export function setState(patch) {
   state = {
     ...state,
     ...patch,
+
+    bookingDraft: { ...state.bookingDraft, ...(patch.bookingDraft ?? {}) },
+    draftStatus: { ...state.draftStatus, ...(patch.draftStatus ?? {}) },
     ui: { ...state.ui, ...(patch.ui ?? {}) },
   };
 

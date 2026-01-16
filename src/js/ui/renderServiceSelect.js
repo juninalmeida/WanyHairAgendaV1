@@ -1,4 +1,4 @@
-export function renderServiceSelect(selectEl, services) {
+export function renderServiceSelect(selectEl, services, selectedServiceId) {
   const baseOption = `<option value="">Selecione um serviço</option>`;
 
   const options = services
@@ -6,4 +6,5 @@ export function renderServiceSelect(selectEl, services) {
     .join("");
 
   selectEl.innerHTML = baseOption + options;
+  selectEl.value = selectedServiceId == null ? "" : String(selectedServiceId);
 }
