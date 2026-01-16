@@ -1,4 +1,5 @@
 import { getState, setState } from "./store.js";
+import { validateBookingDraft } from "./validateBookingDraft.js";
 
 export function updateBookingDraft(patch) {
   const state = getState();
@@ -8,5 +9,11 @@ export function updateBookingDraft(patch) {
     ...patch,
   };
 
-  setState({ bookingDraft: nextDraft });
+  const nextStatus = validateBookingDraft({
+    draft: nextDraft,
+    services: state.services,
+    schedulesOfDay: state.schedulesOfDay,
+  });
+
+  setState({ bookingDraft: nextDraft, draftStatus: nextStatus });
 }
