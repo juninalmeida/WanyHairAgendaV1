@@ -70,6 +70,13 @@
       "durationMin": 45,
       "serviceId": "3",
       "clientName": "Biz"
+    },
+    {
+      "startAt": "2026-05-05T18:30:00.000Z",
+      "durationMin": 60,
+      "serviceId": "2",
+      "clientName": "Bianca",
+      "id": "U2SIeSP"
     }
   ]
 }

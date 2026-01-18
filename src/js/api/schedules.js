@@ -20,11 +20,15 @@ export function deleteSchedule(id) {
 export async function listSchedulesByDate(date) {
   if (!date) return [];
 
-  const schedules = await listSchedules();
+  const from = `${date}T00:00:00`;
+  const to = `${date}T23:59:59`;
 
-  return schedules.filter((schedule) => {
-    const startAt = String(schedule.startAt ?? "");
-    const startDate = startAt.split("T")[0];
-    return startDate === date;
+  const qs = new URLSearchParams({
+    startAt_gte: from,
+    startAt_lte: to,
+    _sort: "startAt",
+    _order: "asc",
   });
+
+  return requestJson(`/schedules?${qs.toString()}`);
 }
