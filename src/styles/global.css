@@ -15,6 +15,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 img,
 picture,
 video,

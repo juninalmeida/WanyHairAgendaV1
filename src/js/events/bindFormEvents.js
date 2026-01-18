@@ -18,7 +18,7 @@ export function bindFormEvents() {
     const date = dom.dateInput.value;
 
     updateBookingDraft({ date });
-    initSchedulesForDate(date);
+    if (date) initSchedulesForDate(date);
   });
 
   dom.timeInput.addEventListener("change", () => {

@@ -1,4 +1,5 @@
 import { requestJson } from "./http.js";
+import dayjs from "../../libs/dayjs.js";
 
 export function listSchedules() {
   return requestJson("/schedules");
@@ -20,8 +21,8 @@ export function deleteSchedule(id) {
 export async function listSchedulesByDate(date) {
   if (!date) return [];
 
-  const from = `${date}T00:00:00`;
-  const to = `${date}T23:59:59`;
+  const from = dayjs(date).startOf("day").toISOString();
+  const to = dayjs(date).endOf("day").toISOString();
 
   const qs = new URLSearchParams({
     startAt_gte: from,

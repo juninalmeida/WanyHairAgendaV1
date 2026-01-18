@@ -6,6 +6,13 @@ import {
 
 const CANCEL_ICON_SRC = "./src/assets/icons/cancel.svg";
 
+const lastRender = {
+  schedulesRef: null,
+  servicesRef: null,
+  error: null,
+  showLoading: null,
+};
+
 function createStatusLi(label) {
   const li = document.createElement("li");
 
@@ -68,7 +75,9 @@ function renderPeriod(
 
   const replace = (...nodes) => ulEl.replaceChildren(...nodes);
 
-  if (loading) return replace(createStatusLi("Carregando..."));
+  if (loading && !schedules.length) {
+    return replace(createStatusLi("Carregando..."));
+  }
   if (error) return replace(createStatusLi("Erro ao carregar"));
 
   if (!schedules.length) return replace();
@@ -88,6 +97,21 @@ export function renderAgendaOfDay(dom, state) {
   const schedules = state.schedulesOfDay ?? [];
   const { loadingSchedules, errorSchedules, deletingSchedule } = state.ui ?? {};
   const isLoading = Boolean(loadingSchedules) || Boolean(deletingSchedule);
+  const showLoading = isLoading && schedules.length === 0;
+
+  if (
+    lastRender.schedulesRef === state.schedulesOfDay &&
+    lastRender.servicesRef === state.services &&
+    lastRender.error === errorSchedules &&
+    lastRender.showLoading === showLoading
+  ) {
+    return;
+  }
+
+  lastRender.schedulesRef = state.schedulesOfDay;
+  lastRender.servicesRef = state.services;
+  lastRender.error = errorSchedules;
+  lastRender.showLoading = showLoading;
 
   const servicesById = new Map(
     (state.services ?? []).map((s) => [String(s.id), s.name])
@@ -96,17 +120,17 @@ export function renderAgendaOfDay(dom, state) {
   const grouped = groupSchedulesByPeriod(schedules);
 
   renderPeriod(dom.periodMorning, grouped.morning, servicesById, {
-    loading: isLoading,
+    loading: showLoading,
     error: errorSchedules,
   });
 
   renderPeriod(dom.periodAfternoon, grouped.afternoon, servicesById, {
-    loading: isLoading,
+    loading: showLoading,
     error: errorSchedules,
   });
 
   renderPeriod(dom.periodNight, grouped.night, servicesById, {
-    loading: isLoading,
+    loading: showLoading,
     error: errorSchedules,
   });
 

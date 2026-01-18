@@ -20,21 +20,20 @@ export function overlaps(a, b) {
   return a.startMs < b.endMs && a.endMs > b.startMs;
 }
 
-function splitStartAt(startAt) {
-  return {
-    date: startAt.slice(0, 10),
-    time: startAt.slice(11, 16),
-  };
-}
-
 function intervalFromSchedule(schedule) {
-  const { date, time } = splitStartAt(schedule.startAt);
+  const start = dayjs(schedule.startAt);
+  const durationMin = Number(schedule.durationMin);
 
-  return buildInterval({
-    date,
-    time,
-    durationMin: schedule.durationMin,
-  });
+  if (!start.isValid() || !Number.isFinite(durationMin)) {
+    return { startMs: Number.NaN, endMs: Number.NaN };
+  }
+
+  const end = start.add(durationMin, "minute");
+
+  return {
+    startMs: start.valueOf(),
+    endMs: end.valueOf(),
+  };
 }
 
 export function hasConflict(
