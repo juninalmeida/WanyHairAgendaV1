@@ -15,4 +15,7 @@ export const dom = {
   agendaCount: document.querySelector(".avatar-more-text"),
 
   scheduleRoot: document.querySelector(".schedule"),
+
+  statusBadge: document.querySelector(".status-badge"),
+  statusText: document.querySelector(".status-text"),
 };
