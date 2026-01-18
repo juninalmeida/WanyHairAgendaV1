@@ -1,4 +1,5 @@
 import { dom } from "../ui/dom.js";
+import { getState } from "../state/store.js";
 
 export function bindAgendaEvents() {
   if (!dom.scheduleRoot) return;
@@ -9,6 +10,17 @@ export function bindAgendaEvents() {
 
     const scheduleId = btn.dataset.id;
 
-    console.log("[agenda] delete click:", scheduleId);
+    const state = getState();
+    const exists = (state.schedulesOfDay ?? []).some(
+      (s) => String(s.id) === String(scheduleId)
+    );
+
+    if (!exists) {
+      console.warn(
+        "[agenda] delete click ignored (id not in state):",
+        scheduleId
+      );
+      return;
+    }
   });
 }

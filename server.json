@@ -28,55 +28,6 @@
       "serviceId": "1",
       "durationMin": 60,
       "clientName": "Ana"
-    },
-    {
-      "id": "e80a",
-      "startAt": "2026-03-04T18:30:00.000Z",
-      "durationMin": 60,
-      "serviceId": "2",
-      "clientName": "Adriana"
-    },
-    {
-      "id": "0c55",
-      "startAt": "2026-03-04T18:30:00.000Z",
-      "durationMin": 120,
-      "serviceId": "1",
-      "clientName": "Adriana"
-    },
-    {
-      "id": "fe28",
-      "startAt": "2026-03-04T20:30:00.000Z",
-      "durationMin": 120,
-      "serviceId": "1",
-      "clientName": "Bianca"
-    },
-    {
-      "id": "d186",
-      "startAt": "2026-03-05T23:00:00.000Z",
-      "durationMin": 120,
-      "serviceId": "1",
-      "clientName": "Mariana"
-    },
-    {
-      "id": "b975",
-      "startAt": "2026-10-07T22:00:00.000Z",
-      "durationMin": 120,
-      "serviceId": "1",
-      "clientName": "Tesla"
-    },
-    {
-      "id": "dbf2",
-      "startAt": "2026-03-05T02:00:00.000Z",
-      "durationMin": 45,
-      "serviceId": "3",
-      "clientName": "Biz"
-    },
-    {
-      "startAt": "2026-05-05T18:30:00.000Z",
-      "durationMin": 60,
-      "serviceId": "2",
-      "clientName": "Bianca",
-      "id": "U2SIeSP"
     }
   ]
 }
