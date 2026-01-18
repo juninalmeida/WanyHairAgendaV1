@@ -5,7 +5,9 @@ import {
 } from "../../utils/time.js";
 
 export function validateBookingDraft({ draft, services, schedulesOfDay }) {
-  if (!draft.date || !draft.time || !draft.serviceId || !draft.clientName) {
+  const clientName = draft.clientName?.trim() ?? "";
+
+  if (!draft.date || !draft.time || !draft.serviceId || !clientName) {
     return { isValid: false, reason: "missing_fields" };
   }
 

@@ -10,7 +10,6 @@ export function bindFormEvents() {
     try {
       await submitSchedule();
     } catch (err) {
-      // temporário: só pra você enxergar falhas no dev
       console.error(err);
     }
   });
@@ -33,7 +32,7 @@ export function bindFormEvents() {
   });
 
   dom.clientInput.addEventListener("input", () => {
-    const clientName = dom.clientInput.value.trim();
+    const clientName = dom.clientInput.value;
     updateBookingDraft({ clientName });
   });
 }

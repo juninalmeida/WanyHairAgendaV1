@@ -9,6 +9,11 @@ export function render(state) {
     state.bookingDraft?.serviceId
   );
 
+  if (dom.dateInput) dom.dateInput.value = state.bookingDraft?.date ?? "";
+  if (dom.timeInput) dom.timeInput.value = state.bookingDraft?.time ?? "";
+  if (dom.clientInput)
+    dom.clientInput.value = state.bookingDraft?.clientName ?? "";
+
   dom.serviceSelect.disabled = Boolean(state.ui.loadingServices);
 
   const busy =

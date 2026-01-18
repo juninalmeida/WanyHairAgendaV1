@@ -1,6 +1,7 @@
 "use strict";
 
 import { getState, setState } from "../state/store.js";
+import { updateBookingDraft } from "../state/bookingDraft.js";
 import { createSchedule } from "../api/schedules.js";
 import { initSchedulesForDate } from "./initSchedulesForDate.js";
 import { buildInterval } from "../../utils/time.js";
@@ -28,7 +29,7 @@ export async function submitSchedule() {
     startAt: interval.startAtISO,
     durationMin,
     serviceId: String(service.id),
-    clientName: bookingDraft.clientName,
+    clientName: bookingDraft.clientName?.trim() ?? "",
   };
 
   setState({ ui: { savingSchedule: true, errorSaveSchedule: null } });
@@ -38,13 +39,11 @@ export async function submitSchedule() {
 
     await initSchedulesForDate(bookingDraft.date);
 
-    setState({
-      bookingDraft: {
-        ...bookingDraft,
-        time: "",
-        serviceId: "",
-        clientName: "",
-      },
+    updateBookingDraft({
+      date: "",
+      time: "",
+      serviceId: "",
+      clientName: "",
     });
   } catch (err) {
     setState({
