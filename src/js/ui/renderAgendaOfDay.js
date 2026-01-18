@@ -60,22 +60,26 @@ function renderPeriod(ulEl, schedules, { loading, error } = {}) {
 
 export function renderAgendaOfDay(dom, state) {
   const schedules = state.schedulesOfDay ?? [];
-  const { loadingSchedules, errorSchedules } = state.ui ?? {};
+  const { loadingSchedules, errorSchedules, deletingSchedule } = state.ui ?? {};
+  const isLoading = Boolean(loadingSchedules) || Boolean(deletingSchedule);
 
   const grouped = groupSchedulesByPeriod(schedules);
 
   renderPeriod(dom.periodMorning, grouped.morning, {
     loading: loadingSchedules,
+    loading: isLoading,
     error: errorSchedules,
   });
 
   renderPeriod(dom.periodAfternoon, grouped.afternoon, {
     loading: loadingSchedules,
+    loading: isLoading,
     error: errorSchedules,
   });
 
   renderPeriod(dom.periodNight, grouped.night, {
     loading: loadingSchedules,
+    loading: isLoading,
     error: errorSchedules,
   });
 

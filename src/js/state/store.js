@@ -23,6 +23,8 @@ let state = {
 
     savingSchedule: false,
     errorSaveSchedule: null,
+    deletingSchedule: false,
+    errorDeleteSchedule: null,
   },
 };
 

@@ -14,7 +14,8 @@ export function render(state) {
   const busy =
     Boolean(state.ui.loadingServices) ||
     Boolean(state.ui.loadingSchedules) ||
-    Boolean(state.ui.savingSchedule);
+    Boolean(state.ui.savingSchedule) ||
+    Boolean(state.ui.deletingSchedule);
 
   const canSubmit = !busy && Boolean(state.draftStatus?.isValid);
   dom.submitBtn.disabled = !canSubmit;
