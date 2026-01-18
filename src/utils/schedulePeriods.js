@@ -32,3 +32,8 @@ export const formatTimeHHmm = (startAtISO) => {
   const d = dayjs(startAtISO);
   return d.isValid() ? d.format("HH:mm") : "--:--";
 };
+
+export const formatDateDDMMYYYY = (startAtISO) => {
+  const d = dayjs(startAtISO);
+  return d.isValid() ? d.format("DD/MM/YYYY") : "--/--/----";
+};

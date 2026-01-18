@@ -166,7 +166,7 @@
 
 .period li {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr) auto auto;
   align-items: center;
   gap: var(--sp-2);
 
@@ -194,6 +194,26 @@
 .period span {
   color: rgba(237, 237, 237, 0.85);
   font-size: var(--fs-1);
+}
+
+.period .schedule-client,
+.period .schedule-service {
+  color: rgba(214, 179, 106, 0.85);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.period .schedule-service {
+  font-size: var(--fs-0);
+}
+
+.period .schedule-date {
+  color: rgba(214, 179, 106, 0.85);
+  font-size: var(--fs-0);
+  text-align: right;
+  white-space: nowrap;
 }
 
 .cancel-icon {
