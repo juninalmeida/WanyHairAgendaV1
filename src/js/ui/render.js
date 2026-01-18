@@ -1,5 +1,6 @@
 import { dom } from "./dom.js";
 import { renderServiceSelect } from "./renderServiceSelect.js";
+import { renderAgendaOfDay } from "./renderAgendaOfDay.js";
 
 export function render(state) {
   renderServiceSelect(
@@ -16,6 +17,7 @@ export function render(state) {
     Boolean(state.ui.savingSchedule);
 
   const canSubmit = !busy && Boolean(state.draftStatus?.isValid);
-
   dom.submitBtn.disabled = !canSubmit;
+
+  renderAgendaOfDay(dom, state);
 }
