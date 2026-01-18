@@ -13,4 +13,6 @@ export const dom = {
   periodNight: document.querySelector("#period-night"),
 
   agendaCount: document.querySelector(".avatar-more-text"),
+
+  scheduleRoot: document.querySelector(".schedule"),
 };

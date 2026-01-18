@@ -17,6 +17,14 @@ export function deleteSchedule(id) {
   });
 }
 
-export function listSchedulesByDate(date) {
-  return requestJson(`/schedules?startAt_like=${encodeURIComponent(date)}`);
+export async function listSchedulesByDate(date) {
+  if (!date) return [];
+
+  const schedules = await listSchedules();
+
+  return schedules.filter((schedule) => {
+    const startAt = String(schedule.startAt ?? "");
+    const startDate = startAt.split("T")[0];
+    return startDate === date;
+  });
 }

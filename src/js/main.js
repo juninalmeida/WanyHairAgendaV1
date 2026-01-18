@@ -22,8 +22,10 @@ import { getState, subscribe } from "./state/store.js";
 import { render } from "./ui/render.js";
 import { initServices } from "./app/initServices.js";
 import { bindFormEvents } from "./events/bindFormEvents.js";
+import { bindAgendaEvents } from "./events/bindAgendaEvents.js";
 
 subscribe(render);
 render(getState());
 initServices();
 bindFormEvents();
+bindAgendaEvents();

@@ -11,10 +11,8 @@ export async function requestJson(path, options = {}) {
     ...options,
   });
 
-  // 204 = sucesso sem corpo (comum em DELETE)
   if (response.status === 204) return null;
 
-  // tenta ler json quando existir.
   const data = await response.json().catch(() => null);
 
   if (!response.ok) {
