@@ -25,6 +25,12 @@ export function render(state) {
   const canSubmit = !busy && Boolean(state.draftStatus?.isValid);
   dom.submitBtn.disabled = !canSubmit;
 
+  if (dom.formError) {
+    const errorMessage = state.ui.errorSaveSchedule ?? "";
+    dom.formError.textContent = errorMessage;
+    dom.formError.hidden = !errorMessage;
+  }
+
   if (dom.scheduleError) {
     const errorMessage = state.ui.errorSchedules ?? "";
     dom.scheduleError.textContent = errorMessage;

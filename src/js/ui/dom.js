@@ -7,6 +7,7 @@ export const dom = {
   clientInput: document.querySelector("#client"),
 
   submitBtn: document.querySelector('.form button[type="submit"]'),
+  formError: document.querySelector(".form-error"),
 
   periodMorning: document.querySelector("#period-morning"),
   periodAfternoon: document.querySelector("#period-afternoon"),

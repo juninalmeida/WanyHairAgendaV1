@@ -118,6 +118,17 @@
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.form-error {
+  margin: 0;
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--r-md);
+
+  font-size: var(--fs-0);
+  color: rgba(255, 149, 149, 0.9);
+  background: rgba(255, 77, 77, 0.12);
+  border: 1px solid rgba(255, 107, 107, 0.35);
+}
+
 .button {
   width: 100%;
   border: 0;
