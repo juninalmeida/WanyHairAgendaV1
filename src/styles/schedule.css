@@ -41,7 +41,8 @@
   border-radius: inherit;
   pointer-events: none;
 
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 30% 25%,
       rgba(255, 255, 255, 0.1),
       transparent 40%
@@ -57,7 +58,8 @@
 .avatar--1 {
   z-index: 1;
 
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 30% 30%,
       rgba(255, 255, 255, 0.2),
       transparent 45%
@@ -74,7 +76,8 @@
 .avatar--2 {
   z-index: 2;
 
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 35% 35%,
       rgba(255, 255, 255, 0.16),
       transparent 45%
@@ -176,7 +179,9 @@
   background: rgba(0, 0, 0, 0.25);
   border: 1px solid transparent;
 
-  transition: background-color 180ms ease, border-color 180ms ease;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
 }
 
 .period li:hover {
@@ -185,8 +190,9 @@
 }
 
 .period strong {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
   font-size: var(--fs-0);
   color: rgba(214, 179, 106, 0.85);
 }
@@ -221,6 +227,12 @@
   height: clamp(0.9rem, 0.85rem + 0.2vw, 1rem);
   opacity: 0.75;
   cursor: pointer;
+  border: none;
+  padding: 0;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cancel-icon:hover {

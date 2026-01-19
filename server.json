@@ -49,20 +49,6 @@
       "serviceId": "3",
       "clientName": "Irmã Wanessa",
       "id": "4FbXE9n"
-    },
-    {
-      "startAt": "2026-03-04T18:30:00.000Z",
-      "durationMin": 120,
-      "serviceId": "1",
-      "clientName": "Mainha",
-      "id": "5sdajCC"
-    },
-    {
-      "startAt": "2026-03-04T22:00:00.000Z",
-      "durationMin": 60,
-      "serviceId": "2",
-      "clientName": "lucia",
-      "id": "aTjyj78"
     }
   ]
 }

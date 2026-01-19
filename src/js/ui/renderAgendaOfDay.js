@@ -31,6 +31,8 @@ function createStatusLi(label) {
   date.className = "schedule-date";
   date.setAttribute("aria-hidden", "true");
 
+  date.setAttribute("aria-hidden", "true");
+
   li.append(strong, span, service, date);
   return li;
 }
@@ -54,23 +56,27 @@ function createScheduleLi(schedule, serviceName, dateLabel) {
   date.className = "schedule-date";
   date.textContent = dateLabel;
 
-  const img = document.createElement("img");
-  img.className = "cancel-icon";
-  img.src = CANCEL_ICON_SRC;
-  img.alt = "Cancelar";
-  img.dataset.action = "delete";
-  img.dataset.id = String(schedule.id);
+  const cancelButton = document.createElement("button");
+  cancelButton.type = "button";
+  cancelButton.className = "cancel-icon";
+  cancelButton.dataset.action = "delete";
+  cancelButton.dataset.id = String(schedule.id);
+  cancelButton.setAttribute(
+    "aria-label",
+    `Cancelar agendamento de ${schedule.clientName}`,
+  );
 
-  li.append(strong, client, service, date, img);
+  const img = document.createElement("img");
+  img.src = CANCEL_ICON_SRC;
+  img.alt = "";
+  img.setAttribute("aria-hidden", "true");
+  cancelButton.appendChild(img);
+
+  li.append(strong, client, service, date, cancelButton);
   return li;
 }
 
-function renderPeriod(
-  ulEl,
-  schedules,
-  servicesById,
-  { loading, error } = {}
-) {
+function renderPeriod(ulEl, schedules, servicesById, { loading, error } = {}) {
   if (!ulEl) return;
 
   const replace = (...nodes) => ulEl.replaceChildren(...nodes);
@@ -84,8 +90,7 @@ function renderPeriod(
 
   const frag = document.createDocumentFragment();
   for (const s of schedules) {
-    const serviceName =
-      servicesById.get(String(s.serviceId)) ?? "Sem serviço";
+    const serviceName = servicesById.get(String(s.serviceId)) ?? "Sem serviço";
     const dateLabel = formatDateDDMMYYYY(s.startAt);
     frag.appendChild(createScheduleLi(s, serviceName, dateLabel));
   }
@@ -114,7 +119,7 @@ export function renderAgendaOfDay(dom, state) {
   lastRender.showLoading = showLoading;
 
   const servicesById = new Map(
-    (state.services ?? []).map((s) => [String(s.id), s.name])
+    (state.services ?? []).map((s) => [String(s.id), s.name]),
   );
 
   const grouped = groupSchedulesByPeriod(schedules);
