@@ -1,10 +1,13 @@
 export function renderServiceSelect(selectEl, services, selectedServiceId) {
-  const baseOption = `<option value="">Selecione um serviço</option>`;
+  if (!selectEl) return;
 
-  const options = services
-    .map((s) => `<option value="${s.id}">${s.name}</option>`)
-    .join("");
+  const fragment = document.createDocumentFragment();
+  fragment.append(new Option("Selecione um serviço", ""));
 
-  selectEl.innerHTML = baseOption + options;
+  for (const service of services) {
+    fragment.append(new Option(service.name, String(service.id)));
+  }
+
+  selectEl.replaceChildren(fragment);
   selectEl.value = selectedServiceId == null ? "" : String(selectedServiceId);
 }
