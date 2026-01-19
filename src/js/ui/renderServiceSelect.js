@@ -1,5 +1,21 @@
+const lastRender = {
+  servicesRef: null,
+  selectedId: null,
+};
+
 export function renderServiceSelect(selectEl, services, selectedServiceId) {
   if (!selectEl) return;
+
+  const normalizedSelectedId =
+    selectedServiceId == null ? "" : String(selectedServiceId);
+
+  if (lastRender.servicesRef === services) {
+    if (lastRender.selectedId !== normalizedSelectedId) {
+      selectEl.value = normalizedSelectedId;
+      lastRender.selectedId = normalizedSelectedId;
+    }
+    return;
+  }
 
   const fragment = document.createDocumentFragment();
   fragment.append(new Option("Selecione um serviço", ""));
@@ -9,5 +25,7 @@ export function renderServiceSelect(selectEl, services, selectedServiceId) {
   }
 
   selectEl.replaceChildren(fragment);
-  selectEl.value = selectedServiceId == null ? "" : String(selectedServiceId);
+  selectEl.value = normalizedSelectedId;
+  lastRender.servicesRef = services;
+  lastRender.selectedId = normalizedSelectedId;
 }
