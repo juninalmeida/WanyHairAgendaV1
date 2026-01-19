@@ -32,7 +32,8 @@ export function render(state) {
   }
 
   if (dom.scheduleError) {
-    const errorMessage = state.ui.errorSchedules ?? "";
+    const errorMessage =
+      state.ui.errorSchedules ?? state.ui.errorDeleteSchedule ?? "";
     dom.scheduleError.textContent = errorMessage;
     dom.scheduleError.hidden = !errorMessage;
   }
