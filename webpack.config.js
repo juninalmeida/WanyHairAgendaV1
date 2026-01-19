@@ -10,12 +10,13 @@ module.exports = {
 
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "docs"),
+    publicPath: "./",
   },
 
   devServer: {
     static: {
-      directory: path.join(__dirname, "dist"),
+      directory: path.join(__dirname, "docs"),
     },
     port: 3000,
     open: true,
@@ -31,7 +32,7 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, "src", "assets", "icons"),
-          to: path.resolve(__dirname, "dist", "src", "assets", "icons"),
+          to: path.resolve(__dirname, "docs", "src", "assets", "icons"),
         },
       ],
     }),

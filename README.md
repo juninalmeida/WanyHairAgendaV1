@@ -451,7 +451,7 @@ A identidade visual utiliza tons dourados sobre fundo obsidian, com cards em gla
 │  │  └─ 📄 schedulePeriods.js
 │  └─ 📁 libs
 │     └─ 📄 dayjs.js
-├─ 📁 dist
+├─ 📁 docs
 └─ 📄 README.md
 ```
 
@@ -498,10 +498,10 @@ npm run dev
 **Deploy (GitHub Pages / Vercel)**
 
 - Build do projeto: `npm run build`
-- Publicar a pasta `dist/` como site estático.
+- Publicar a pasta `docs/` como site estático.
 - Para dados reais, substitua o JSON Server por uma API hospedada.
-  - **GitHub Pages:** configurar publicação do diretório `dist/`.
-  - **Vercel:** Build Command `npm run build` e Output `dist`.
+  - **GitHub Pages:** configurar publicação do diretório `docs/`.
+  - **Vercel:** Build Command `npm run build` e Output `docs`.
 
 <a id="como-usar"></a>
 
