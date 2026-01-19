@@ -6,7 +6,7 @@ export function render(state) {
   renderServiceSelect(
     dom.serviceSelect,
     state.services,
-    state.bookingDraft?.serviceId
+    state.bookingDraft?.serviceId,
   );
 
   if (dom.dateInput) dom.dateInput.value = state.bookingDraft?.date ?? "";
@@ -24,6 +24,12 @@ export function render(state) {
 
   const canSubmit = !busy && Boolean(state.draftStatus?.isValid);
   dom.submitBtn.disabled = !canSubmit;
+
+  if (dom.scheduleError) {
+    const errorMessage = state.ui.errorSchedules ?? "";
+    dom.scheduleError.textContent = errorMessage;
+    dom.scheduleError.hidden = !errorMessage;
+  }
 
   renderAgendaOfDay(dom, state);
 }
